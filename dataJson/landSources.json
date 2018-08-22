@@ -1,0 +1,122 @@
+[
+  {
+    "year": "2010",
+    "landsources": "现有建设用地",
+    "value": 628
+  },
+  {
+    "year": "2010",
+    "landsources": "新增建设用地",
+    "value": 3504
+  },
+  {
+    "year": "2010",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 235
+  },
+  {
+    "year": "2011",
+    "landsources": "现有建设用地",
+    "value": 585
+  },
+  {
+    "year": "2011",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 276
+  },
+  {
+    "year": "2011",
+    "landsources": "新增建设用地",
+    "value": 2768
+  },
+  {
+    "year": "2012",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 257
+  },
+  {
+    "year": "2012",
+    "landsources": "新增建设用地",
+    "value": 2189
+  },
+  {
+    "year": "2012",
+    "landsources": "现有建设用地",
+    "value": 541
+  },
+  {
+    "year": "2013",
+    "landsources": "现有建设用地",
+    "value": 679
+  },
+  {
+    "year": "2013",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 352
+  },
+  {
+    "year": "2013",
+    "landsources": "新增建设用地",
+    "value": 1375
+  },
+  {
+    "year": "2014",
+    "landsources": "新增建设用地",
+    "value": 1676
+  },
+  {
+    "year": "2014",
+    "landsources": "现有建设用地",
+    "value": 818
+  },
+  {
+    "year": "2014",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 353
+  },
+  {
+    "year": "2015",
+    "landsources": "新增建设用地",
+    "value": 850
+  },
+  {
+    "year": "2015",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 350
+  },
+  {
+    "year": "2015",
+    "landsources": "现有建设用地",
+    "value": 940
+  },
+  {
+    "year": "2016",
+    "landsources": "新增建设用地",
+    "value": 1197
+  },
+  {
+    "year": "2016",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 342
+  },
+  {
+    "year": "2016",
+    "landsources": "现有建设用地",
+    "value": 697
+  },
+  {
+    "year": "2017",
+    "landsources": "新增建设用地(来自存量库)",
+    "value": 503
+  },
+  {
+    "year": "2017",
+    "landsources": "现有建设用地",
+    "value": 1160
+  },
+  {
+    "year": "2017",
+    "landsources": "新增建设用地",
+    "value": 1349
+  }
+]

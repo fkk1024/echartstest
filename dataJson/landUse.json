@@ -1,0 +1,104 @@
+[
+
+  {
+    "year": "2010",
+    "landuse": "工业用地",
+    "value": 4280
+  },
+  {
+    "year": "2010",
+    "landuse": "仓储用地",
+    "value": 87
+  },
+
+  {
+    "year": "2011",
+    "landuse": "工业用地",
+    "value": 3560
+  },
+  {
+    "year": "2011",
+    "landuse": "仓储用地",
+    "value": 69
+  },
+  {
+    "year": "2012",
+    "landuse": "工业用地",
+    "value": 2906
+  },
+  {
+    "year": "2012",
+    "landuse": "仓储用地",
+    "value": 80
+  },
+  {
+    "year": "2012",
+    "landuse": "采矿用地",
+    "value": 1
+  },
+  {
+    "year": "2013",
+    "landuse": "仓储用地",
+    "value": 105
+  },
+  {
+    "year": "2013",
+    "landuse": "工业用地",
+    "value": 2298
+  },
+  {
+    "year": "2013",
+    "landuse": "采矿用地",
+    "value": 3
+  },
+  {
+    "year": "2014",
+    "landuse": "工业用地",
+    "value": 2756
+  },
+  {
+    "year": "2014",
+    "landuse": "仓储用地",
+    "value": 91
+  },
+  {
+    "year": "2015",
+    "landuse": "工业用地",
+    "value": 2532
+  },
+  {
+    "year": "2015",
+    "landuse": "仓储用地",
+    "value": 20
+  },
+  {
+    "year": "2016",
+    "landuse": "工业用地",
+    "value": 2125
+  },
+  {
+    "year": "2016",
+    "landuse": "仓储用地",
+    "value": 111
+  },
+  {
+    "year": "2017",
+    "landuse": "工业用地",
+    "value": 2911
+  },
+  {
+    "year": "2017",
+    "landuse": "公共设施用地",
+    "value": 3
+  },
+  {
+    "year": "2017",
+    "landuse": "仓储用地",
+    "value": 97
+  },
+  {
+    "year": "2017",
+    "landuse": "港口码头用地",
+    "value": 1
+  }
+]

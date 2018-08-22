@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ZIMAA</title>
+    <!--<link rel="shortcut icon" href="./static/favicon.ico">-->
+
+    <script type="text/javascript" src="http://www.jb51.net/jslib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript"
+            src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="./china.js"></script>
+    <script type="text/javascript" src="./js/anhui.js"></script>
+    <script type="text/javascript" src="./js/aomen.js"></script>
+    <script type="text/javascript" src="./js/beijing.js"></script>
+    <script type="text/javascript" src="./js/chongqing.js"></script>
+    <script type="text/javascript" src="./js/fujian.js"></script>
+    <script type="text/javascript" src="./js/gansu.js"></script>
+    <script type="text/javascript" src="./js/guangdong.js"></script>
+    <script type="text/javascript" src="./js/guangxi.js"></script>
+    <script type="text/javascript" src="./js/guizhou.js"></script>
+    <script type="text/javascript" src="./js/hainan.js"></script>
+    <script type="text/javascript" src="./js/hebei.js"></script>
+    <script type="text/javascript" src="./js/heilongjiang.js"></script>
+    <script type="text/javascript" src="./js/henan.js"></script>
+    <script type="text/javascript" src="./js/jiangsu.js"></script>
+    <script type="text/javascript" src="./js/jiangxi.js"></script>
+    <script type="text/javascript" src="./js/jilin.js"></script>
+    <script type="text/javascript" src="./js/liaoning.js"></script>
+    <script type="text/javascript" src="./js/neimenggu.js"></script>
+    <script type="text/javascript" src="./js/ningxia.js"></script>
+    <script type="text/javascript" src="./js/qinghai.js"></script>
+    <script type="text/javascript" src="./js/shandong.js"></script>
+    <script type="text/javascript" src="./js/shanghai.js"></script>
+    <script type="text/javascript" src="./js/shanxi.js"></script>
+    <script type="text/javascript" src="./js/shanxi1.js"></script>
+    <script type="text/javascript" src="./js/sichuan.js"></script>
+    <script type="text/javascript" src="./js/taiwan.js"></script>
+    <script type="text/javascript" src="./js/tianjin.js"></script>
+    <script type="text/javascript" src="./js/xianggang.js"></script>
+    <script type="text/javascript" src="./js/xianggang.js"></script>
+    <script type="text/javascript" src="./js/xizang.js"></script>
+    <script type="text/javascript" src="./js/yunnan.js"></script>
+    <script type="text/javascript" src="./js/zhejiang.js"></script>
+    <!--<script type="text/javascript" src="./js/guangdong.js"></script>-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript"
+            src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+    <!--<script src="./static/oss.js"></script>-->
+    <style media="screen" type="text/css">
+        #appLoading {
+            width: 100%;
+            height: 100%;
+        }
+
+        #appLoading img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        #list ul li span {
+            font-size: 16px;
+        }
+
+        body {
+            background: #454359;
+        }
+    </style>
+    <script type="text/javascript">
+        mxBasePath = './static/';
+    </script>
+    <!--<link rel="stylesheet" href="./static/coverEleStyle.css">-->
+
+</head>
+<body style="padding: 0;margin: 0;font-size: 0.16rem ;">
+<!--<div id="appLoading">-->
+<!--<img src="./static/images/logo.jpg" alt="loading"/>-->
+<!--</div>-->
+<div style="height: 50px;width: 100%;
+    border:2px solid #eee;font-size: 20px;
+    font-weight: bold;
+    border-bottom: 0;
+    text-align: center;
+    box-sizing: border-box;line-height: 50px;color: #fff">
+    2010-2017年中国工业土地（招拍挂）分析
+</div>
+<div style="display: flex">
+    <div style="height: 500px;width: 25%;">
+        <div id="app0" style="height: 250px;border:1px solid #eee;"></div>
+        <div id="zhuzhuang" style="height: 250px;border:1px solid #eee;"></div>
+    </div>
+    <div id="app" style="height: 500px;width: 50%;border:1px solid #eee"></div>
+    <div id="app1" style="height: 500px;width: 25%;border:1px solid #eee"></div>
+</div>
+<div style="display: flex">
+
+    <!--<div style="display: flex;flex: 1">-->
+    <div id="zhexian" style="height: 350px;border:1px solid #eee;flex: 1"></div>
+    <div id="zhuzhuang1" style="height: 350px;border:1px solid #eee;flex: 1"></div>
+    <!--</div>-->
+</div>
+
+<!-- built files will be auto injected -->
+<script type="text/javascript">
+    var areaArr = []
+    var avg_list = []
+    var zhejiangAVG = []
+    var avgtotal = []
+    var landSources = []
+    var landUse = []
+    var mapOfHot = []
+
+    function ajaxfunc() {
+        let P_list = []
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/areaJson.json', function (res) {
+                    areaArr = res
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/avg.json', function (res) {
+                    avg_list = res.RECORDS
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/zhejiangAVG.json', function (res) {
+                    zhejiangAVG = res
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/avgtotal.json', function (res) {
+                    avgtotal = res
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/landSources.json', function (res) {
+                    landSources = res
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/landUse.json', function (res) {
+                    landUse = res
+                    resolve(res)
+                })
+            })
+        )
+        P_list.push(
+            new Promise((resolve, reject) => {
+                $.getJSON('./dataJson/mapOfHot.json', function (res) {
+                    mapOfHot = res
+                    resolve(res)
+                })
+            })
+        )
+        Promise.all(P_list).then(res => {
+            fff()
+            bingtu1()
+            map2('浙江')
+            zhexiantu('浙江省', zhejiangAVG, 33)
+            zhuzhuang('浙江省', landSources, 33)
+        })
+    }
+    ajaxfunc()
+
+    function junjia() {
+        let new_arr = []
+        avg_list.forEach((item) => {
+            if (item.code.substring(0, 2) == 33) {
+                new_arr.push(item)
+            }
+        })
+    }
+
+    // 浙江省企业分布图
+    function fff() {
+        junjia()
+        bingtu1()
+        let dom = document.getElementById("app");
+        let myChartC = echarts.init(dom);
+        let area_arr = [
+            {name: '北京', value: ''},
+            {name: '天津', value: ''},
+            {name: '上海', value: ''},
+            {name: '重庆', value: ''},
+            {name: '河北', value: ''},
+            {name: '河南', value: ''},
+            {name: '云南', value: ''},
+            {name: '辽宁', value: ''},
+            {name: '黑龙江', value: ''},
+            {name: '湖南', value: ''},
+            {name: '安徽', value: ''},
+            {name: '山东', value: ''},
+            {name: '新疆', value: ''},
+            {name: '江苏', value: ''},
+            {name: '浙江', value: ''},
+            {name: '江西', value: ''},
+            {name: '湖北', value: ''},
+            {name: '广西', value: ''},
+            {name: '甘肃', value: ''},
+            {name: '山西', value: ''},
+            {name: '内蒙古', value: ''},
+            {name: '陕西', value: ''},
+            {name: '吉林', value: ''},
+            {name: '福建', value: ''},
+            {name: '贵州', value: ''},
+            {name: '广东', value: ''},
+            {name: '青海', value: ''},
+            {name: '西藏', value: ''},
+            {name: '四川', value: ''},
+            {name: '宁夏', value: ''},
+            {name: '海南', value: ''},
+            {name: '台湾', value: ''},
+            {name: '香港', value: ''},
+            {name: '澳门', value: ''}
+        ]
+        let new_arr = []
+        area_arr.forEach((item, index) => {
+            mapOfHot.forEach(el => {
+                if (el.name.indexOf(item.name) != -1) {
+                    item.value = Number(el.avg1.toFixed(2))
+                }
+            })
+
+        })
+        let option = {
+            title: {
+                text: '全国地图',
+                left: '15px',
+                top: '15px',
+                right: '0',
+                textStyle: {
+                    color: '#fff',
+                }
+            },
+            //提示框
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) { //添加数字,否则为坐标
+                    console.log(params.value)
+                    let html = `
+                ${params.name}
+                <br>
+                注册资本:${params.value[2]}万元`
+                    return html
+                },
+                padding: [15, 15, 15, 15],
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '13'
+                }
+            },
+            toolbox: {
+                show: true,
+                top: '5px',
+                right: '25px',
+                iconStyle: {
+                    borderColor: '#fff'
+                },
+                feature: {
+                    saveAsImage: {show: true}
+                }
+            },
+            // geo: {
+            //     map: 'china',
+            //     roam: true,
+            //     label: {
+            //         emphasis: {
+            //             show: false
+            //         }
+            //     },
+            //     selectedMode: 'single',
+            //     itemStyle: {					// 定义样式
+            //         normal: {					// 普通状态下的样式
+            //             areaColor: '#fff',
+            //             borderColor: '#111'
+            //         },
+            //         emphasis: {					// 高亮状态下的样式
+            //             areaColor: '#c8efff'
+            //         }
+            //     }
+            // },
+            visualMap: {
+                min: 0,
+                max: 800,
+                left: 'left',
+                top: 'bottom',
+                text: ['高', '低'], // 文本，默认为数值文本
+                calculable: true,
+                textStyle: {
+                    color: "#fff"
+                }
+            },
+            series: [
+                {
+                    name: 'iphone3',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: true,
+                    data: area_arr
+                }
+            ]
+        };
+
+        function randomData() {
+            return Math.round(Math.random() * 1000);
+        }
+
+        // }
+        myChartC.setOption(option, true);
+        //设置点击事件
+        myChartC.on('click', function (params) {
+            var city = params.name;
+            console.log('params+++++++++++++', params)
+        });
+
+    }
+
+
+    function map2(name) {
+        let code = getcode(name, areaArr)
+        // let code2 = code.substring(0, 2)
+        let code2 = '33'
+        $.getJSON('./dataJson/avg.json', function (res) {
+            let arr_data = []
+
+            res.RECORDS.forEach((item) => {
+                if (item.code.substring(0, 2) == code2) {
+                    arr_data.push({
+                        name: item.name,
+                        value: [item.lng, item.lat, item.value]
+                    })
+                }
+            })
+            let dom = document.getElementById("app1");
+            let myChartC = echarts.init(dom);
+            // let arr1 = res.RECORDS
+            // let arr1 = []
+            var convertData = function (data) {
+                var res = [];
+                for (var i = 0; i < data.length; i++) {
+                    var geoCoord = geoCoordMap[data[i].name];
+                    if (geoCoord) {
+                        res.push({
+                            name: data[i].name,
+                            value: geoCoord.concat(data[i].value)
+                        });
+                    }
+                }
+                return res;
+            };
+
+
+            let option = {
+                title: {
+                    text: `${name}土地分布图`,
+                    left: '15px',
+                    top: '15px',
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                //提示框
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) { //添加数字,否则为坐标
+                        console.log(params.value)
+                        let vvv = Number(params.value[2].toFixed(2))
+                        let html = `
+                ${params.name}
+                <br>
+                土地均价:${vvv}万元`
+                        return html
+                    },
+                    padding: [5, 10, 5, 10],
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: '13'
+                    }
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        magicType: {
+                            show: true,
+                            type: ['pie', 'funnel']
+                        },
+                        saveAsImage: {show: true}
+                    }
+                },
+                geo: {
+                    map: name,
+                    roam: true,
+                    label: {
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {					// 定义样式
+                        normal: {					// 普通状态下的样式
+                            areaColor: '#9BBCC1',
+                            borderColor: '#111'
+                        },
+
+                        emphasis: {					// 高亮状态下的样式
+                            areaColor: '#c8efff'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: '浙江企业',
+                        type: 'effectScatter',
+                        coordinateSystem: 'geo',
+                        data: arr_data,  //slice里面的数可以是0 ，意思是全部显示  0,1000 意思是显示这组数据中最大前1000组
+                        symbolSize: 5,
+                        // showEffectOn: 'render',
+                        // rippleEffect: {
+                        //     brushType: 'stroke'
+                        // },
+                        // hoverAnimation: false,
+                        label: {
+                            //显示文字
+                            normal: {
+                                formatter: function (val) {
+                                    console.log('aaa显示的文字', val)
+                                },
+                                position: 'top',
+                                show: false
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                shadowBlur: 10,
+                                color: "#F4E925",
+                                shadowColor: '#333'
+                            }
+                        }
+
+                    }
+                ]
+            };
+            myChartC.setOption(option, true);
+        })
+
+        bingtu(name, landUse, code2)
+    }
+
+
+    function getcode(name, arr) {
+        let arrlist = arr
+        let value_code = null
+        arrlist.forEach(area => {
+            if (area.label.indexOf(name) != -1) {
+                value_code = area.value
+            }
+        })
+        return value_code
+    }
+
+
+    //    折线图
+    function zhexiantu(name, avgtotal, code2) {
+        let dom = document.getElementById("zhexian");
+        let myChartC = echarts.init(dom);
+        let data = [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+        ]
+        zhejiangAVG.forEach(item => {
+            switch (item.name) {
+                case '杭州市':
+                    data[0].push(item.avg1)
+                    break;
+                case '宁波市':
+                    data[1].push(item.avg1)
+                    break;
+                case '温州市':
+                    data[2].push(item.avg1)
+                    break;
+                case '嘉兴市':
+                    data[3].push(item.avg1)
+                    break;
+                case '湖州市':
+                    data[4].push(item.avg1)
+                    break;
+                case '绍兴市':
+                    data[5].push(item.avg1)
+                    break;
+                case '金华市':
+                    data[6].push(item.avg1)
+                    break;
+                case '衢州市':
+                    data[7].push(item.avg1)
+                    break;
+                case '舟山市':
+                    data[8].push(item.avg1)
+                    break;
+                case '台州市':
+                    data[9].push(item.avg1)
+                    break;
+                case '丽水市':
+                    data[10].push(item.avg1)
+                    break;
+                default:
+                    break
+            }
+        })
+        let option = {
+            title: {
+                text: `${name}土地均价折线图`,
+                left: '15px',
+                top: '15px',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            legend: {
+                icon: 'rect',
+                orient: 'vertical',
+                right: 10,
+                y: 'center',
+                // top: 12,
+                itemWidth: 10,
+                itemHeight: 10,
+                itemGap: 10,
+                borderRadius: 4,
+                textStyle: {
+                    fontSize: 14,
+                    // backgroundColor:'red',
+                    color: '#FFF'
+                },
+                data: ['杭州市', '宁波市', '温州市', '嘉兴市', '湖州市', '绍兴市', '金华市', '衢州市', '舟山市', '台州市', '丽水市']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: {show: true},
+                    magicType: {
+                        show: true,
+                        type: ['pie', 'funnel']
+                    },
+                    saveAsImage: {show: true}
+                }
+            },
+            //提示框
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) { //添加数字,否则为坐标
+                    let html = ` ${name} <br> ${params.name}土地均价:${params.value}万元`
+                    return html
+                },
+                padding: [5, 10, 5, 10],
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '13'
+                }
+            },
+            xAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'category',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+                data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017']
+            },
+            yAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+            },
+            series: [
+                {
+                    name: '杭州市',
+                    data: data[0],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                        // color: '#0000FF'
+                    }
+                }, {
+                    name: '宁波市',
+                    data: data[1],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                        // color: '#001CFF'
+                    }
+                }, {
+                    name: '温州市',
+                    data: data[2],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                        // color: '#0039FF'
+                    }
+                }, {
+                    name: '嘉兴市',
+                    data: data[3],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '湖州市',
+                    data: data[4],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '绍兴市',
+                    data: data[5],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '金华市',
+                    data: data[6],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '衢州市',
+                    data: data[7],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '舟山市',
+                    data: data[8],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '台州市',
+                    data: data[9],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }, {
+                    name: '丽水市',
+                    data: data[10],
+                    type: 'line',
+                    lineStyle: {
+                        width:3
+                    }
+                }
+            ]
+        };
+        myChartC.setOption(option, true);
+    }
+
+    //柱状
+    function zhuzhuang(name, avgtotal, code2) {
+        let dom = document.getElementById("zhuzhuang");
+        console.log('aaaa', dom)
+        let myChartC = echarts.init(dom);
+        var dataAxis = [ '2010', '2011年', '2012', '2013', '2014', '2015', '2016', '2017'];
+        let YV = []
+        let D1 = []
+        let D2 = []
+        let D3 = []
+        avgtotal.forEach(item => {
+            // if (item.code == code2) {
+            console.log('item+++', item, item.landsources)
+            if (item.landsources.indexOf('现有') != -1) {
+                D1.push(item.value)
+            } else if (item.landsources.indexOf('来自存') != -1) {
+                D2.push(item.value)
+            } else {
+                D3.push(item.value)
+            }
+            YV.push(Number(item.value.toFixed(4)))
+            // }
+        })
+        data = YV
+        app.title = '堆叠柱状图';
+
+        option = {
+            color: ['#529CF5', '#91CAF5', '#00E3FF'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['现有建设用地', '新增建设用地(来自存量库)', '新增建设用地'],
+                textStyle: {
+                    color: "#fff"
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: dataAxis,
+                    splitLine: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    },
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    splitLine: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    },
+                }
+            ],
+            series: [
+                {
+                    name: '现有建设用地',
+                    type: 'bar',
+                    stack: '土地',
+                    data: D1
+                },
+                {
+                    name: '新增建设用地',
+                    type: 'bar',
+                    stack: '土地',
+                    data: D2
+                },
+                {
+                    name: '新增建设用地(来自存量库)',
+                    type: 'bar',
+                    stack: '土地',
+                    data: D3
+                }
+            ]
+        };
+        myChartC.setOption(option, true);
+    }
+
+    //饼图
+    // function bingtu(name, avgtotal, code2) {
+    //     let dom = document.getElementById("bingtu");
+    //     console.log('aaaa', dom)
+    //     let myChartC = echarts.init(dom);
+    //     app.title = '堆叠条形图';
+    //     let xx = [
+    //         '其他普通商品住房用地',
+    //         '采矿用地',
+    //         '工业用地',
+    //         '中低价位、中小套型普通商品住房用地',
+    //         '住宿餐饮用地',
+    //         '商务金融用地',
+    //         '其他商服用地',
+    //         '经济适用住房用地',
+    //         '仓储用地',
+    //         '其他住房用地',
+    //         '廉租住房用地',
+    //         '高档住宅用地',
+    //         '公共租赁住房用地',
+    //         '宗教用地',
+    //         '街巷用地',
+    //         '科教用地',
+    //         '批发零售用地',
+    //         '公共设施用地',
+    //         '殡葬用地',
+    //         '公园与绿地',
+    //         '医卫慈善用地',
+    //         '机关团体用地',
+    //         '公路用地',
+    //         '文体娱乐用地',
+    //         '铁路用地',
+    //         '港口码头用地',
+    //         '风景名胜设施用地',
+    //         '空闲地',
+    //         '新闻出版用地',
+    //         '水库水面',
+    //         '水工建筑用地',
+    //         '监教场所用地',
+    //         '公共管理与公共服务用地',
+    //         '机场用地',
+    //         '军事设施用地',
+    //         '交通运输用地',
+    //         '水域及水利设施用地',
+    //         '管道运输用地',
+    //         '住宅用地'
+    //     ]
+    //     let yy = ['14年', '15年', '16年', '17年']
+    //     let a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
+    //         a11, a12, a13, a14, a15, a16, a17, a18, a19,
+    //         a20, a21, a22, a23, a24, a25, a26, a27, a28, a29,
+    //         a30, a31, a32, a33, a34, a35, a36, a37, a38, a39 = []
+    //     avgtotal.forEach(item => {
+    //         if (item.code == code2) {
+    //             YV.push(Number(item.value.toFixed(4)))
+    //         }
+    //     })
+    //     let option = {
+    //         tooltip: {
+    //             trigger: 'axis',
+    //             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+    //                 type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+    //             }
+    //         },
+    //         legend: {
+    //             data: xx
+    //         },
+    //         grid: {
+    //             left: '3%',
+    //             right: '4%',
+    //             bottom: '3%',
+    //             containLabel: true
+    //         },
+    //         xAxis: {
+    //             type: 'value'
+    //         },
+    //         yAxis: {
+    //             type: 'category',
+    //             data: yy
+    //         },
+    //         series: [
+    //             {
+    //                 name: '其他普通商品住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '采矿用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '工业用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '中低价位、中小套型普通商品住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '住宿餐饮用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '商务金融用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '其他商服用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '经济适用住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '仓储用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '其他住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '廉租住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '高档住宅用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '公共租赁住房用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '宗教用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '街巷用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '科教用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '批发零售用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '公共设施用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '殡葬用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '公园与绿地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '医卫慈善用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '机关团体用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '公路用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '文体娱乐用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '铁路用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '港口码头用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '风景名胜设施用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '空闲地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '新闻出版用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '水库水面',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '水工建筑用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '监教场所用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '公共管理与公共服务用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '机场用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '军事设施用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             },
+    //             {
+    //                 name: '交通运输用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [150, 212, 201, 154]
+    //             },
+    //             {
+    //                 name: '水域及水利设施用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [320, 302, 301, 302]
+    //             },
+    //             {
+    //                 name: '管道运输用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [120, 132, 101, 134]
+    //             },
+    //             {
+    //                 name: '住宅用地',
+    //                 type: 'bar',
+    //                 stack: '总量',
+    //                 label: {
+    //                     normal: {
+    //                         show: true,
+    //                         position: 'insideRight'
+    //                     }
+    //                 },
+    //                 data: [220, 182, 191, 234]
+    //             }
+    //         ]
+    //     };
+    //     myChartC.setOption(option, true);
+    // }
+    //饼图
+    //图四。横向堆叠图
+    //横向堆叠图
+    function bingtu(name, avgtotal, code2) {
+        let dom = document.getElementById("zhuzhuang1");
+        console.log('aaaa', dom)
+        let myChartC = echarts.init(dom);
+        app.title = '堆叠条形图';
+        let data = [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+        avgtotal.forEach(item => {
+            let index = Number(item.year)
+            switch (item.landuse) {
+                case '工业用地':
+                    data[0][index - 2010] = item.value
+                    break;
+                case '仓储用地':
+                    data[1][index - 2010] = item.value
+                    break;
+                case '采矿用地':
+                    data[2][index - 2010] = item.value
+                    break;
+                case '其他普通商品住房用地':
+                    data[3][index - 2010] = item.value
+                    break;
+                case '公共设施用地':
+                    data[4][index - 2010] = item.value
+                    break;
+                case '港口码头用地':
+                    data[5][index - 2010] = item.value
+                    break;
+                default:
+                    break;
+            }
+        })
+        let option = {
+            title: {
+                text: `${name}省出让用地类型占比图`,
+                left: '15px',
+                top: '15px',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            color: ['#00FFFF', '#0055FF', '#FCDC30', '#B34038','#CF9C8C','#AE9C94'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                show: true,
+                icon: 'rect',
+                orient: 'vertical',
+                right: 10,
+                y: 'center',
+                // top: 12,
+                itemWidth: 10,
+                itemHeight: 10,
+                itemGap: 10,
+                borderRadius: 4,
+                textStyle: {
+                    fontSize: 14,
+                    // backgroundColor:'red',
+                    color: '#FFF'
+                },
+                data: [
+                    '工业用地',
+                    '仓储用地',
+                    '采矿用地',
+                    '其他普通商品住房用地',
+                    '公共设施用地',
+                    '港口码头用地',
+                ]
+            },
+            grid: {
+                // left: '3%',
+                // right: '4%',
+                // bottom: '3%',
+                containLabel: false
+            },
+            xAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+            },
+            yAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'category',
+                data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+            },
+            series: [
+                {
+                    name: '工业用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[0]
+                }, {
+                    name: '仓储用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[1]
+                }, {
+                    name: '采矿用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[2]
+                }, {
+                    name: '其他普通商品住房用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[3]
+                }, {
+                    name: '公共设施用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[4]
+                }, {
+                    name: '港口码头用地',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideRight'
+                        }
+                    },
+                    data: data[5]
+                }
+            ]
+        };
+        myChartC.setOption(option, true);
+    }
+
+
+    //饼图1
+    function bingtu1() {
+        let name_list = [];
+        let val_list = [];
+        mapOfHot.forEach((item, index) => {
+            if (index < 10) {
+                name_list.unshift(item.name)
+                val_list.unshift(Number(item.avg1.toFixed(2)))
+            }
+        })
+        let dom = document.getElementById("app0");
+        let myChartC = echarts.init(dom);
+        let option = {
+            title: {
+                text: '2017全国前十工业用地均价排行',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            color: ['#008EFF'],
+            // legend: {
+            //     data: ['2011年', '2012年']
+            // },
+            grid: {
+                left: '3%',
+                // right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'value',
+                boundaryGap: [0, 0.01],
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+            },
+            yAxis: {
+                splitLine: {
+                    show: false
+                },
+                type: 'category',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+                data: name_list
+            },
+            series: [
+                {
+                    name: '2017年',
+                    type: 'bar',
+                    data: val_list
+                }
+            ]
+        };
+
+
+        myChartC.setOption(option, true);
+    }
+</script>
+</body>
+
+</html>
